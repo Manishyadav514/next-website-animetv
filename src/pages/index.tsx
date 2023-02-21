@@ -2,10 +2,12 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
+import { useTheme } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { theme, setTheme } = useTheme();
   return (
     <>
       <Head>
@@ -15,8 +17,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="h-screen w-full flex justify-center items-center text-center text-3xl font-bold underline text-pink-500">
-          <p>Hello world!</p>
+        <div className="h-screen w-full flex-col gap-32 flex justify-center items-center">
+          <p className="text-black dark:text-white">Hello world!</p>
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          >
+            Theme Change
+          </button>
         </div>
       </main>
     </>

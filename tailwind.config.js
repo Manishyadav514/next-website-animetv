@@ -11,4 +11,6 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+  darkMode: "class",
+  safelist: ["dark"],
+};
