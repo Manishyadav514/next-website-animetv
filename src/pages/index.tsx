@@ -12,8 +12,6 @@ export default function Home() {
       </Head>
       <main>
         <div className="h-screen w-full flex-col gap-32 flex justify-center items-center">
-          <p className="text-black dark:text-white">Toggle to change mode</p>
-          <ThemeSlider />
         </div>
       </main>
     </>
