@@ -44,7 +44,7 @@ export const ThemeSlider = () => {
   return (
     <div>
       <button
-        className="cursor-pointer relative w-[40px] h-[20px]  md:w-[50px] md:h-[26px] bg-lightTheme-600 dark:bg-darkTheme-600 flex rounded-[50px] justify-between items-center p-[5px] scale-[1.5]"
+        className="cursor-pointer relative w-[40px] h-[20px]  md:w-[50px] md:h-[26px] bg-gray-900 flex rounded-[50px] justify-between items-center p-[5px] scale-[1.5]"
         onClick={() => handleModeChange()}
       >
         <IconContext.Provider value={{ color: "#FFC0CB" }}>

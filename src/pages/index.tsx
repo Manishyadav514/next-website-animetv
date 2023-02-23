@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { ThemeSlider } from "@/components/Button";
+import { Banner } from "@/components/Banner";
 
 export default function Home() {
   return (
@@ -11,8 +11,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="h-screen w-full flex-col gap-32 flex justify-center items-center">
-        </div>
+        <Banner />
+        <div className="h-screen w-full flex-col gap-32 flex justify-center items-center"></div>
       </main>
     </>
   );

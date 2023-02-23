@@ -56,9 +56,6 @@ const MenuLinks = ({
   slug: string;
   child: any | undefined;
 }) => {
-  child.map((subChild: any, index: number) => {
-    console.log(subChild.label, index);
-  });
   return (
     <div key={slug} className="lg:w-1/4 md:w-1/2 w-full px-4 ">
       <h2 className="title-font font-large text-gray-100 tracking-widest text-base md:text-lg mb-1 uppercase">
@@ -90,12 +87,6 @@ const MenuLinks = ({
 };
 
 const Footer = () => {
-  console.log(menuLink);
-
-  menuLink.map((item: any) => {
-    // <MenuLinks label={item.lable} slug={item.slug} child={item.child} />;
-    console.log(item);
-  });
 
   return (
     <footer>
@@ -142,10 +133,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-lightTheme-900 dark:bg-darkTheme-900 text-white py-4 px-5 flex flex-wrap justify-center align-middle">
-        <p className="text-teal-200 md:text-base text-sm lg:text-xl font-semibold text-center cursor-pointer md:text-left">
-          © 2022 ANIME-<span className="text-[#E64238]">TV</span>
-          <a className="text-gray-50 ml-2 font-normal">by Manish Yadav</a>
+      <div className="bg-lightTheme-900 dark:bg-darkTheme-900 text-gray-400 py-4 px-5 flex flex-wrap justify-center align-middle">
+        <p className="md:text-base text-sm lg:text-xl text-center cursor-pointer md:text-left">
+          Copyright © 2022 animeTV
+          <a className="ml-2 font-normal">by Manish Yadav</a>
         </p>
       </div>
     </footer>

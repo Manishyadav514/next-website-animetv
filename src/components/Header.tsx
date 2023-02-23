@@ -96,25 +96,25 @@ export const Header2 = () => {
 
   return (
     <header>
-      <div className="w-full bg-lightTheme-900 dark:bg-darkTheme-900 flex justify-center">
+      <div className="w-full bg-transparent absolute dark:bg-darkTheme-700 flex justify-center">
         <div
-          className="p-3 lg:p-5 text-sm md:text-base lg:text-lg overflow-hidden max-w-[1000px] sticky z-[999] top-0 left-0 w-full flex justify-between items-center lg:px-[50px]"
+          className="p-2 lg:px-[50px] text-sm md:text-base lg:text-lg overflow-hidden max-w-[1000px] sticky z-[999] top-0 left-0 w-full flex justify-between items-center"
           id="navbar"
           ref={headerRef}
         >
           <div className="flex align-middle items-center justify-center text-white font-bold text-2xl cursor-pointer">
             <Link href="/" legacyBehavior>
               <Image
-                width={120}
+                width={40}
                 height={40}
-                src="/animetv.png"
+                src="/images/sharingan.png"
                 alt="logo"
                 priority
-                className="lg:w-[180px] lg:h-[60]"
+                className="lg:w-[80px] mr-2"
               />
             </Link>
 
-            {/* animeTV */}
+            <p className="text-deco-red">Anime TV</p>
           </div>
           <div className={`hidden lg:block gap-2`}>
             {menuLink.map((item: any) => (
