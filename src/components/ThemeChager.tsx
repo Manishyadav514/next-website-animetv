@@ -1,7 +1,7 @@
 import { BsSunFill, BsMoonFill } from "react-icons/bs";
 import { IconContext } from "react-icons";
 import { useTheme } from "next-themes";
-import { Console } from "console";
+import { CommonIcon } from "@/common/CommonIcon";
 
 export const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();
@@ -53,6 +53,9 @@ export const ThemeSlider = () => {
         <IconContext.Provider value={{ color: "yellow" }}>
           <BsSunFill className="w-3 h-3 md:w-4 md:h-4" />
         </IconContext.Provider>
+        {/* <span className="text-yellow-200">
+          <CommonIcon icon={"ph:sun-dim-light"} />
+        </span> */}
         <div
           className={`absolute w-[15px] h-[15px] md:w-[20px] md:h-[20px] left-[2px] bg-white rounded-full ease-in-out transform transition duration-500 ${
             theme === "dark" && "translate-x-[19px] md:translate-x-[26px]"

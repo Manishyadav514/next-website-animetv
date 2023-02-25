@@ -1,22 +1,14 @@
 // const routesLink = []
 
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  useCallback,
-} from "react";
-import {
-  FaBars,
-  FaWindowClose,
-  FaUserCircle,
-} from "react-icons/fa";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { FaBars, FaWindowClose, FaUserCircle } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
-import { ThemeSlider } from "./Button";
+import { ThemeSlider } from "./ThemeChager";
+import { CommonButton } from "@/common/CommonButton";
 
-const menuLink = [
+export const menuLink = [
   {
     label: "Home",
     slug: "/",
@@ -105,16 +97,16 @@ export const Header2 = () => {
           <div className="flex align-middle items-center justify-center text-white font-bold text-2xl cursor-pointer">
             <Link href="/" legacyBehavior>
               <Image
-                width={40}
-                height={40}
-                src="/images/sharingan.png"
+                width={140}
+                height={70}
+                src="/images/animetv.png"
                 alt="logo"
                 priority
                 className="lg:w-[80px] mr-2"
               />
             </Link>
 
-            <p className="text-deco-red">Anime TV</p>
+            {/* <p className="text-deco-red"></p> */}
           </div>
           <div className={`hidden lg:block gap-2`}>
             {menuLink.map((item: any) => (
@@ -159,13 +151,20 @@ export const Header2 = () => {
               className="rounded p-1 md:p-2 cursor-pointer flex flex-row bg-[#222222] text-white items-center lg:hidden"
               onClick={toggle}
             >
-              <div className="hidden md:block lg:inline-flex lg:w-auto w-full rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+              <div className="mr-1 hidden md:block lg:inline-flex lg:w-auto w-full rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
                 Menu
               </div>
               <div className="text-[1.3rem]">
                 <FaBars />
               </div>
             </div>
+            {/* <CommonButton
+              btnIcon="uis:bars"
+              btnLabel="Menu"
+              customClass="bg-darkTheme-800 hover:scale-100"
+              iconRight
+              handleClick={toggle}
+            /> */}
           </div>
         </div>
       </div>

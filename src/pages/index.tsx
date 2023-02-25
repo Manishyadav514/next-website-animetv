@@ -1,5 +1,8 @@
 import Head from "next/head";
 import { Banner } from "@/components/Banner";
+import RowSlider, { RecommendationWidget } from "@/components/SectionWrapper";
+import { CommentWrapper } from "@/components/CommentSection";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,7 +15,16 @@ export default function Home() {
       </Head>
       <main>
         <Banner />
-        <div className="h-screen w-full flex-col gap-32 flex justify-center items-center"></div>
+        <RowSlider title="Trending" fetchUrl={"fetchTrending"} />
+        <RowSlider
+          title="Netflix Original"
+          fetchUrl={"fetchNetflixOriginals"}
+          isLargeRow
+        />
+        <div className="bg-cyan-100 dark:bg-darkTheme-800 w-full h-full flex flex-col lg:flex-row justify-center lg:items-start items-center">
+          <CommentWrapper />
+          <RecommendationWidget />
+        </div>
       </main>
     </>
   );

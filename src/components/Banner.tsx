@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { BsInstagram, BsArrowRightShort } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-import { MdOutlineSlowMotionVideo } from "react-icons/md";
+import { CommonButton } from "@/common/CommonButton";
 
 const carouselData = [
   {
@@ -30,8 +30,8 @@ const carouselData = [
 
 export const Banner = () => {
   const [bannerData, setCaraouselData] = useState(carouselData);
-  const [bannerIndex, setIndex] = useState(0);
-  console.log({ bannerData, bannerIndex });
+  const [bannerIndex, setIndex] = useState(1);
+  // console.log({ bannerData, bannerIndex });
 
   // setInterval(() => {
   //   if (bannerIndex < bannerData.length - 1) {
@@ -47,7 +47,7 @@ export const Banner = () => {
   return (
     <>
       <div
-        className="relative w-full h-[70vh] flex flex-col justify-center m-0 ease-in-out transform transition duration-500"
+        className="relative w-full h-[90vh] flex flex-col justify-center m-0 ease-in-out transform transition duration-500"
         style={{
           // backgroundImage: `url("/images/anime-girl.png")`,
           backgroundImage: `linear-gradient(rgb(0 0 0 / 79%),rgb(19 43 59 / 22%), rgb(0 0 0 / 84%)), url(${bannerData[bannerIndex].imageHref})`,
@@ -65,26 +65,21 @@ export const Banner = () => {
           </p>
           <div className="flex flex-row mt-3 gap-4">
             <Link href="/about" legacyBehavior>
-              <button className="capitalize shadow-md bg-deco-red rounded-full flex flex-row justify-center items-center easeLinear transform hover:scale-105 transition duration-500 py-2 px-3">
-                <span className="text-white text-[23px] mr-1">
-                  <MdOutlineSlowMotionVideo />
-                </span>
-                <span className="text-sm md:text-lg">Watch Now</span>
-              </button>
+              <CommonButton
+                btnLabel="Watch Now"
+                btnIcon="material-symbols:slow-motion-video-rounded"
+                customClass="rounded-full"
+              />
             </Link>
             <Link href="/about" legacyBehavior>
-              <button className="capitalize shadow-md border-2 bg-gray-900 border-deco-red rounded-full flex flex-row justify-center items-center easeLinear transform hover:scale-105 transition duration-500 py-2 px-3">
-                <span className="text-sm md:text-lg">View</span>
-                <span className="text-white text-lg ml-1">
-                  <BsArrowRightShort />
-                </span>
-              </button>
+              <CommonButton
+                btnLabel="View"
+                btnIcon="ic:baseline-arrow-forward"
+                customClass="rounded-full border-2 border-deco-red"
+                bgBlack
+                iconRight
+              />
             </Link>
-            {/* <Link href="/about" legacyBehavior>
-              <button className="capitalize rounded-full easeLinear transform hover:scale-105 transition duration-500 border-2 bg-gray-900 border-deco-red px-3 py-2">
-                Details
-              </button>
-            </Link> */}
           </div>
         </div>
         <div className="z-[888] absolute right-5 flex flex-col gap-2 text-3xl">
