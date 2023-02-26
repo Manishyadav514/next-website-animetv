@@ -38,7 +38,7 @@ const RowSlider = (props: {
       // return request;
     }
     fetchData();
-  }, []);
+  }, [options]);
   return (
     <>
       <div className="mt-8 p-4 md:p-12 bg-lightTheme-400 dark:bg-darkTheme-700">

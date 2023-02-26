@@ -54,7 +54,7 @@ export const Header2 = () => {
       //   scrollPosition,
       // });
     },
-    [scrollPosition]
+    []
   );
   useEffect(() => {
     window.addEventListener("scroll", onScroll, { passive: true });
