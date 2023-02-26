@@ -102,7 +102,7 @@ export const Header2 = () => {
                 src="/images/animetv.png"
                 alt="logo"
                 priority
-                className="lg:w-[80px] mr-2"
+                className="lg:w-[180px] mr-2 h-auto"
               />
             </Link>
 

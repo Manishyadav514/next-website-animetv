@@ -104,10 +104,10 @@ const Footer = () => {
               <Image
                 width={120}
                 height={40}
-                src="/animetv.png"
+                src="/images/animetv.png"
                 alt="logo"
                 priority
-                className="lg:w-[180px] lg:h-[60]"
+                className="lg:w-[180px] lg:h-auto"
               />
             </div>
           </div>

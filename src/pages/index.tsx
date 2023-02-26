@@ -2,7 +2,8 @@ import Head from "next/head";
 import { Banner } from "@/components/Banner";
 import RowSlider, { RecommendationWidget } from "@/components/SectionWrapper";
 import { CommentWrapper } from "@/components/CommentSection";
-import Image from "next/image";
+import PopupModal from "@/common/PopupModal";
+import { animeData1 } from "@/data/anime";
 
 export default function Home() {
   return (
@@ -15,12 +16,14 @@ export default function Home() {
       </Head>
       <main>
         <Banner />
-        <RowSlider title="Trending" fetchUrl={"fetchTrending"} />
-        <RowSlider
-          title="Netflix Original"
-          fetchUrl={"fetchNetflixOriginals"}
-          isLargeRow
-        />
+        {animeData1.map((items) => (
+          <RowSlider key={items.title} title={items.title} data={items.data} />
+        ))}
+        <RowSlider title="Popular" />
+        <RowSlider title="Action Anime" />
+
+        <RowSlider title="Keep Watching" />
+        {/* <PopupModal /> */}
         <div className="bg-cyan-100 dark:bg-darkTheme-800 w-full h-full flex flex-col lg:flex-row justify-center lg:items-start items-center">
           <CommentWrapper />
           <RecommendationWidget />

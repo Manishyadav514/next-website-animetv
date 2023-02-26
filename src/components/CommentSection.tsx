@@ -2,9 +2,34 @@ import { useState } from "react";
 import Image from "next/image";
 import { CommonButton } from "@/common/CommonButton";
 
+export const CommentBox = ({ textBtn = false }: { textBtn?: boolean }) => {
+  const handleCommentPost = () => {
+    alert("Your response has been recorded!");
+  };
+  return (
+    <form className="mb-6 w-full h-full">
+      <div className="h-4/6 w-full py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-darkTheme-700 dark:border-gray-700">
+        <textarea
+          id="comment"
+          className="px-0 w-full h-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-darkTheme-700"
+          placeholder="Write a comment..."
+          required
+        ></textarea>
+      </div>
+      <CommonButton
+        btnLabel="Post Comment"
+        btnIcon="ri:send-plane-fill"
+        customClass="border border-deco-red"
+        bgBlack
+        handleClick={handleCommentPost}
+        textButton={textBtn}
+      />
+    </form>
+  );
+};
+
 export const CommentWrapper = () => {
   const [reviewData, setReviewData] = useState(reviews);
-  // console.log({ reviewData });
 
   return (
     <>
@@ -15,7 +40,7 @@ export const CommentWrapper = () => {
             height={320}
             src="/images/ziraya.png"
             alt="ziraya.png"
-            className="w-9/12 lg:w-8/12"
+            className="w-9/12 lg:w-8/12 h-auto"
           />
         </div>
         <div className="flex border-l-[5px] px-3   border-deco-red justify-between items-center mb-6">
@@ -23,25 +48,10 @@ export const CommentWrapper = () => {
             Post Your Comment
           </h2>
         </div>
-
-        <div className="w-full ">
-          <form className="mb-6">
-            <div className="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-darkTheme-700 dark:border-gray-700">
-              <textarea
-                id="comment"
-                className="px-0 w-full h-[8rem] text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-darkTheme-700"
-                placeholder="Write a comment..."
-                required
-              ></textarea>
-            </div>
-            <CommonButton
-              btnLabel="Post Comment"
-              btnIcon="ri:send-plane-fill"
-              customClass="border border-deco-red"
-              bgBlack
-            />
-          </form>
+        <div className="h-80">
+          <CommentBox />
         </div>
+
         <div className="w-full my-4">
           <div className="p-2 flex justify-start items-center font-semibold text-2xl leading-5 capitalize pl-5 relative after:content[''] after:absolute after:w-1 after:h-8 after:left-0 after:first-line:top-0 after:mr-3 after:bg-deco-red ">
             {`Discussion ${
@@ -73,13 +83,13 @@ export const SingleReview = ({
   reply,
   responseEle = false,
 }: any) => {
-  console.log({ responseEle });
   const [moreReview, setMoreReview] = useState(false);
+  const [replyBox, setReplyBox] = useState(false);
   const handleMoreReply = () => {
     setMoreReview(!moreReview);
   };
-  const handleClick = () => {
-    console.log("parent click");
+  const handleReply = () => {
+    setReplyBox(!replyBox);
   };
   return (
     <article
@@ -141,9 +151,10 @@ export const SingleReview = ({
       <p className="text-gray-500 dark:text-gray-400">{comment}</p>
       <div className="flex items-center mt-4 space-x-4">
         <CommonButton
-          btnLabel="Reply"
+          btnLabel={replyBox ? "Hide Box" : "Reply"}
           btnIcon="uil:comment-message"
           textButton
+          handleClick={handleReply}
         />
         {reply?.length > 0 && (
           <CommonButton
@@ -154,6 +165,11 @@ export const SingleReview = ({
           />
         )}
       </div>
+      {replyBox && (
+        <div className="mt-2 p-4 md:mt-6 md:pl-8 md:pr-32 h-32">
+          <CommentBox textBtn />
+        </div>
+      )}
       {moreReview &&
         reply &&
         reply.map((review: any, index: number) => (
