@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import axios from "axios";
 import Link from "next/link";
+import { MoviePortrait, RecommendMovieCard } from "./Card";
 
 const RowSlider = (props: any) => {
   const [movies, setMovies] = useState([]);
@@ -81,28 +82,11 @@ const RowSlider = (props: any) => {
                     />
                   </Link>
                 </div>
-                // <MovieCard key={movie?.animeId} />
               ))
             ) : (
               <>
                 {props.data
                   ? props?.data?.map((movie: any) => (
-                      // <div
-                      //   key={movie?.Name}
-                      //   className="relative cursor-pointer m-5 hover:scale-110 ease-in-out transform transition duration-1000 snap-center flex-shrink-0 h-[300px] flex items-center justify-center text-8xl"
-                      // >
-
-                      //   <Image
-                      //     width={250}
-                      //     height={100}
-                      //     src={
-                      //       movie?.images?.portrait ||
-                      //       "/data/portrait14.jpg"
-                      //     }
-                      //     alt={movie.Name || ""}
-                      //   />
-                      // </div>
-
                       <div
                         key={movie?.Name}
                         className="relative w-[250px] h-[350px]  cursor-pointer m-5 hover:scale-110 ease-in-out transform transition duration-1000 snap-center flex-shrink-0 flex items-center justify-center"
@@ -130,47 +114,13 @@ const RowSlider = (props: any) => {
                           </p>
                         </h2>
                       </div>
-
-                      // <div
-                      //   key={movie.Name}
-                      //   className="relative flex items-end justify-start w-[150px] h-80 rounded md:h-72 text-left bg-center bg-cover dark:bg-gray-500"
-                      //   style={{
-                      //     backgroundImage: `url(${movie?.images?.portrait})`,
-                      //     // background: "/data/portrait14.jpg",
-                      //   }}
-                      // >
-                      //   <Link href="/">
-                      //     <div className="ease-in-out transform transition duration-500 hover:opacity-90 hover:bg-black absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-slate-800 to-slate-800"></div>
-                      //   </Link>
-                      //   <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
-                      //     <span className="text-sm rounded px-2 p-1 top-0 bg-deco-red z-10 text-white">
-                      //       9/10
-                      //     </span>
-                      //     <div className="flex flex-col justify-start text-center dark:text-gray-100">
-                      //       <span className="text-3xl font-semibold leading-none tracking-wide">
-                      //         01
-                      //       </span>
-                      //       <span className="leading-none uppercase">Aug</span>
-                      //     </div>
-                      //   </div>
-                      //   <h2 className="z-10 p-5">
-                      //     <p className="font-medium text-md hover:underline dark:text-gray-100">
-                      //       {movie.Name}
-                      //     </p>
-                      //   </h2>
-                      // </div>
                     ))
                   : [...dummyData].map((movie, index) => (
                       <div
                         key={movie?.animeId}
-                        className="cursor-pointer m-5 hover:scale-110 ease-in-out transform transition duration-1000 snap-center flex-shrink-0 h-[300px] flex items-center justify-center text-8xl"
+                        className="cursor-pointer m-5 max-w-xs snap-center flex-shrink-0 flex items-center justify-center"
                       >
-                        <Image
-                          width={250}
-                          height={100}
-                          src="/data/portrait14.jpg"
-                          alt={index.toString()}
-                        />
+                        <MoviePortrait />
                       </div>
                     ))}
               </>
@@ -194,38 +144,6 @@ const RowSlider = (props: any) => {
 
 export default RowSlider;
 
-export const MovieCard = ({}) => {
-  return (
-    <div
-      className="relative flex items-end justify-start w-full rounded h-60 md:h-72 text-left bg-center bg-cover dark:bg-gray-500"
-      style={{
-        backgroundImage: `url("https://source.unsplash.com/random/241x320")`,
-        // background: "/data/portrait14.jpg",
-      }}
-    >
-      <Link href="/">
-        <div className="ease-in-out transform transition duration-500 hover:opacity-90 hover:bg-black absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent from-slate-800 to-slate-800"></div>
-      </Link>
-      <div className="absolute top-0 left-0 right-0 flex items-center justify-between mx-5 mt-3">
-        <span className="text-sm rounded px-2 p-1 top-0 bg-deco-red z-10 text-white">
-          9/10
-        </span>
-        <div className="flex flex-col justify-start text-center dark:text-gray-100">
-          <span className="text-3xl font-semibold leading-none tracking-wide">
-            01
-          </span>
-          <span className="leading-none uppercase">Aug</span>
-        </div>
-      </div>
-      <h2 className="z-10 p-5">
-        <p className="font-medium text-md hover:underline dark:text-gray-100">
-          Naruto the Movie
-        </p>
-      </h2>
-    </div>
-  );
-};
-
 export const RecommendationWidget = () => {
   return (
     <div className="w-full max-w-xl p-2 md:p-8 text-gray-100">
@@ -237,11 +155,11 @@ export const RecommendationWidget = () => {
           </div>
         </div>
         <div className="grid grid-cols-2 flex-wrap justify-center lg:justify-start gap-2 md:gap-12">
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
+          <RecommendMovieCard />
+          <RecommendMovieCard />
+          <RecommendMovieCard />
+          <RecommendMovieCard />
+          <RecommendMovieCard />
         </div>
       </div>
     </div>

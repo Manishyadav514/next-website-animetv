@@ -4,6 +4,8 @@ import RowSlider, { RecommendationWidget } from "@/components/SectionWrapper";
 import { CommentWrapper } from "@/components/CommentSection";
 import PopupModal from "@/common/PopupModal";
 import { animeData1 } from "@/data/anime";
+import Image from "next/image";
+import { MovieLandscape, MoviePortrait } from "@/components/Card";
 
 export default function Home() {
   return (
@@ -20,13 +22,77 @@ export default function Home() {
           <RowSlider key={items.title} title={items.title} data={items.data} />
         ))}
         <RowSlider title="Popular" />
+        <div className="bg-cyan-200 dark:bg-darkTheme-800 w-full h-full flex flex-col justify-center items-center lg:flex-row lg:items-start ">
+          <div className="max-w-3xl p-2 md:p-8">
+            <div className="mb-8 ml-1 flex flex-row gap-12">
+              <div className="text-black dark:text-white flex justify-start items-center font-semibold text-2xl leading-5 capitalize pl-5 relative after:content[''] after:absolute after:w-1 after:h-8 after:left-0 after:first-line:top-0 after:mr-3 after:bg-deco-red ">
+                Adventure
+              </div>
+            </div>{" "}
+            <div className="w-full grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
+              <MoviePortrait />
+              <MoviePortrait />
+              <MoviePortrait />
+              <MoviePortrait />
+              <MoviePortrait />
+              <MoviePortrait />
+              <MoviePortrait />
+              <MoviePortrait />
+            </div>
+          </div>
+          <div className="w-full max-w-xl p-2 md:p-8 text-gray-100">
+            {/* <div className="absolute lg:block hidden -ml-4 w-[3px] h-full bg-deco-red"></div> */}
+            <div className="lg:pl-12">
+              <div className="flex justify-start">
+                <Image
+                  width={300}
+                  height={300}
+                  src="/images/kuruma.png"
+                  alt="grass.png"
+                />
+              </div>
+              <div className="mb-8 ml-1 flex flex-row gap-12">
+                <div className="text-black dark:text-white flex justify-start items-center font-semibold text-2xl leading-5 capitalize pl-5 relative after:content[''] after:absolute after:w-1 after:h-8 after:left-0 after:first-line:top-0 after:mr-3 after:bg-deco-red ">
+                  Top Views
+                </div>
+                <div className="flex flex-row gap-2 text-sm text-gray-700 dark:text-gray-400">
+                  <p className="cursor-pointer">Week</p>
+                  <p className="cursor-pointer">Month</p>
+                  <p className="cursor-pointer">Year</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-6">
+                <MovieLandscape />
+                <MovieLandscape />
+                <MovieLandscape />
+                <MovieLandscape />
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <div className="w-full flex justify-center items-center">
+          <Image
+            width={600}
+            height={600}
+            src="/images/kakashi.png"
+            alt="mikasa1.png"
+            className="w-auto h-full"
+          />
+        </div> */}
         <RowSlider title="Action Anime" />
-
         <RowSlider title="Keep Watching" />
         {/* <PopupModal /> */}
-        <div className="bg-cyan-100 dark:bg-darkTheme-800 w-full h-full flex flex-col lg:flex-row justify-center lg:items-start items-center">
+        <div className="bg-cyan-200 dark:bg-darkTheme-800 w-full h-full flex flex-col lg:flex-row justify-center lg:items-start items-center">
           <CommentWrapper />
           <RecommendationWidget />
+        </div>
+        <div className="flex justify-end">
+          <Image
+            width={300}
+            height={300}
+            src="/images/whisper-away.png"
+            alt="grass.png"
+          />
         </div>
       </main>
     </>

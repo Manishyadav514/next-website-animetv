@@ -26,7 +26,7 @@ module.exports = {
         },
         lightTheme: {
           100: "#F4F5F7",
-          200: "#",
+          200: "#CFFAFE",
           300: "#",
           400: "#A2CAE4",
           500: "#A4C9E6",
@@ -36,8 +36,11 @@ module.exports = {
           900: "#1E293B",
         },
         deco: {
-          red: "#E64238",//#e53637
+          red: "#E64238", //#e53637
         },
+      },
+      fontSize: {
+        xss: "11px",
       },
     },
   },

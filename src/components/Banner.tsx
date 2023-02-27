@@ -57,7 +57,7 @@ export const Banner = () => {
         }}
       >
         {" "}
-        <div className=" absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent dark:via-transparent from-darkTheme-800 to-lightTheme-100 dark:from-darkTheme-800 dark:to-darkTheme-800"></div>
+        <div className=" absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent dark:via-transparent from-darkTheme-800 to-lightTheme-200 dark:from-darkTheme-800 dark:to-darkTheme-800"></div>
         <div className="text-white z-[888] max-w-[900px] mt-12 pl-4 pr-14 py-24 md:px-12">
           <div className="text-[25px] md:text-[3rem] lg:text-[60px] font-semibold pb-[0.3rem]">
             {bannerData[bannerIndex].name}
