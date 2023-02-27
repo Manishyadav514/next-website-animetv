@@ -23,15 +23,13 @@ export default function Home() {
         ))}
         <RowSlider title="Popular" />
         <div className="bg-cyan-200 dark:bg-darkTheme-800 w-full h-full flex flex-col justify-center items-center lg:flex-row lg:items-start ">
-          <div className="max-w-3xl p-2 md:p-8">
-            <div className="mb-8 ml-1 flex flex-row gap-12">
+          <div className="max-w-3xl w-full p-2 md:p-8">
+            <div className="mb-8 mt-2 ml-1 flex flex-row gap-12">
               <div className="text-black dark:text-white flex justify-start items-center font-semibold text-2xl leading-5 capitalize pl-5 relative after:content[''] after:absolute after:w-1 after:h-8 after:left-0 after:first-line:top-0 after:mr-3 after:bg-deco-red ">
                 Adventure
               </div>
             </div>{" "}
-            <div className="w-full grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
-              <MoviePortrait />
-              <MoviePortrait />
+            <div className="  w-full grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
               <MoviePortrait />
               <MoviePortrait />
               <MoviePortrait />
@@ -43,7 +41,7 @@ export default function Home() {
           <div className="w-full max-w-xl p-2 md:p-8 text-gray-100">
             {/* <div className="absolute lg:block hidden -ml-4 w-[3px] h-full bg-deco-red"></div> */}
             <div className="lg:pl-12">
-              <div className="flex justify-start">
+              <div className="flex justify-center lg:justify-start ">
                 <Image
                   width={300}
                   height={300}
@@ -70,15 +68,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* <div className="w-full flex justify-center items-center">
-          <Image
-            width={600}
-            height={600}
-            src="/images/kakashi.png"
-            alt="mikasa1.png"
-            className="w-auto h-full"
-          />
-        </div> */}
         <RowSlider title="Action Anime" />
         <RowSlider title="Keep Watching" />
         {/* <PopupModal /> */}
