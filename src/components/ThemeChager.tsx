@@ -1,7 +1,7 @@
 import { BsSunFill, BsMoonFill } from "react-icons/bs";
 import { IconContext } from "react-icons";
 import { useTheme } from "next-themes";
-import { CommonIcon } from "@/common/CommonIcon";
+import { CommonIcon } from "@/components/CommonIcon";
 
 export const ThemeChanger = () => {
   const { theme, setTheme } = useTheme();

@@ -26,8 +26,8 @@ module.exports = {
         },
         lightTheme: {
           100: "#F4F5F7",
-          200: "#CFFAFE",
-          300: "#",
+          200: "#EFF4FF",
+          300: "#CFFAFE",
           400: "#A2CAE4",
           500: "#A4C9E6",
           600: "#3F75A4",

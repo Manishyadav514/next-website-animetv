@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import { CommonButton } from "@/common/CommonButton";
+import { CommonButton } from "@/components/CommonButton";
 
 export const CommentBox = ({ textBtn = false }: { textBtn?: boolean }) => {
   const handleCommentPost = () => {

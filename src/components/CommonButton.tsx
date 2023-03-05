@@ -38,7 +38,7 @@ export const CommonButton = ({
     return (
       <button
         type={btnType}
-        className={clsx(`${customClass} capitalize shadow-md flex flex-row gap-1 justify-center items-center py-2 px-3 text-white font-normal tracking-normal text-sm md:text-lg
+        className={clsx(`${customClass} capitalize shadow-md flex flex-row gap-1 justify-center items-center py-2 px-3 text-white font-normal tracking-normal text-sm
       ${bgBlack ? "bg-black" : "bg-deco-red"}
       ${iconRight && "flex-row-reverse"}
       ${

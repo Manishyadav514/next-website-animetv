@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebookMessenger } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-import { CommonButton } from "@/common/CommonButton";
+import { CommonButton } from "@/components/CommonButton";
 
 const carouselData = [
   {
@@ -56,8 +56,15 @@ export const Banner = () => {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {" "}
-        <div className=" absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent dark:via-transparent from-darkTheme-800 to-lightTheme-200 dark:from-darkTheme-800 dark:to-darkTheme-800"></div>
+        {/* <div className="absolute w-full h-auto overflow-hidden top-0 bottom-0 left-0 right-0 flex justify-center items-center">
+          <video autoPlay loop muted className="h-auto w-screen">
+            <source
+              src="https://cdn.pixabay.com/vimeo/662525884/anime-103434.mp4?rendition=source&expiry=1678018172&hash=5890a30998502aa12c7eb3f589ae876efa76127c"
+              type="video/mp4"
+            />
+          </video>
+        </div> */}
+        <div className=" absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b via-transparent dark:via-transparent from-darkTheme-800 to-lightTheme-100 dark:from-darkTheme-800 dark:to-darkTheme-800"></div>
         <div className="text-white z-[888] max-w-[900px] mt-12 pl-4 pr-14 py-24 md:px-12">
           <div className="text-[25px] md:text-[3rem] lg:text-[60px] font-semibold pb-[0.3rem]">
             {bannerData[bannerIndex].name}

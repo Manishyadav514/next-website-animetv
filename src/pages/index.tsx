@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Banner } from "@/components/Banner";
 import RowSlider, { RecommendationWidget } from "@/components/SectionWrapper";
 import { CommentWrapper } from "@/components/CommentSection";
-import PopupModal from "@/common/PopupModal";
+import PopupModal from "@/components/PopupModal";
 import { animeData1 } from "@/data/anime";
 import Image from "next/image";
 import { MovieLandscape, MoviePortrait } from "@/components/Card";
