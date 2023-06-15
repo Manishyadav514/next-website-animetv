@@ -2,12 +2,22 @@ import Head from "next/head";
 import { Banner } from "@/components/Banner";
 import RowSlider, { RecommendationWidget } from "@/components/SectionWrapper";
 import { CommentWrapper } from "@/components/CommentSection";
-import PopupModal from "@/components/PopupModal";
 import { animeData1 } from "@/data/anime";
 import Image from "next/image";
 import { MovieLandscape, MoviePortrait } from "@/components/Card";
+import AnimeList from "@/service/AnimeList";
 
 export default function Home() {
+  const data = async () => {
+    const orderAPI = new AnimeList();
+    try {
+      const data = await orderAPI.popular();
+      console.log("data-2", data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <>
       <Head>
